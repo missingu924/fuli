@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<!-- 权限过滤器 -->
+	<filter>
+		<filter-name>AuthFilter</filter-name>
+		<filter-class>com.hz.auth.AuthFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AuthFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 权限servlet -->
+	<servlet>
+		<servlet-name>AuthServlet</servlet-name>
+		<servlet-class>com.hz.auth.AuthServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AuthServlet</servlet-name>
+		<url-pattern>/Auth/Servlet</url-pattern>
+	</servlet-mapping>
+	<!-- 字典servlet -->
+	<servlet>
+		<servlet-name>DictServlet</servlet-name>
+		<servlet-class>com.hz.dict.DictServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DictServlet</servlet-name>
+		<url-pattern>/Dict/Servlet</url-pattern>
+	</servlet-mapping>
+	<!-- 工具类servlet -->
+	<servlet>
+		<servlet-name>UtilServlet</servlet-name>
+		<servlet-class>com.hz.util.UtilServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UtilServlet</servlet-name>
+		<url-pattern>/Util/Servlet</url-pattern>
+	</servlet-mapping>
+	<!-- 系统servlet -->
+	<servlet>
+		<servlet-name>SystemServlet</servlet-name>
+		<servlet-class>com.wuyg.system.SystemServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SystemServlet</servlet-name>
+		<url-pattern>/System/Servlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- ==以下为具体应用的servlet== -->
+	<servlet>
+		<servlet-name>VillagerServlet</servlet-name>
+		<servlet-class>com.fuli.VillagerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VillagerServlet</servlet-name>
+		<url-pattern>/Villager/Servlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>WelfarePolicyServlet</servlet-name>
+		<servlet-class>com.fuli.WelfarePolicyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WelfarePolicyServlet</servlet-name>
+		<url-pattern>/WelfarePolicy/Servlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>VWelfareForDrawDetailServlet</servlet-name>
+		<servlet-class>
+			com.fuli.VWelfareForDrawDetailServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VWelfareForDrawDetailServlet</servlet-name>
+		<url-pattern>/VWelfareForDrawDetail/Servlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>VillagerWelfareDrawServlet</servlet-name>
+		<servlet-class>
+			com.fuli.VillagerWelfareDrawServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VillagerWelfareDrawServlet</servlet-name>
+		<url-pattern>/VillagerWelfareDraw/Servlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>VWelfareDrawDetailServlet</servlet-name>
+		<servlet-class>
+			com.fuli.VWelfareDrawDetailServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VWelfareDrawDetailServlet</servlet-name>
+		<url-pattern>/VWelfareDrawDetail/Servlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>VWelfareDrawStatServlet</servlet-name>
+		<servlet-class>com.fuli.VWelfareDrawStatServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VWelfareDrawStatServlet</servlet-name>
+		<url-pattern>/VWelfareDrawStat/Servlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- ==session超时时间，单位秒== -->
+	<session-config>
+		<session-timeout>3600</session-timeout>
+	</session-config>
+	<!-- ==该应用的首页面== -->
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+</web-app>
