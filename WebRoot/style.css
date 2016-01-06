@@ -138,7 +138,7 @@ td.orange_bg{
 			background-position: left;
 			padding-left: 16px; 
 			font-size: 12px;
-			width: 60px;
+			width: 58px;
 			height: 32px;
 }
 .button:hover{
@@ -210,12 +210,12 @@ td.orange_bg{
 			border-radius: 12px;
 			height: 24px;
 			width: 24px;
-}
-.circle_button_add{
-			background-image: url(../images/svg/heavy/shop.svg);
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: 12px 12px;
+}
+.circle_button_add{
+			background-image: url(../images/svg/heavy/shop.svg);
 }
 .circle_button_add:hover{
 			background-image: url(../images/svg/heavy/green/shop.png);
