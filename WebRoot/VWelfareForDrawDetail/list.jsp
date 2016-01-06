@@ -49,7 +49,8 @@
 									<%=DictionaryUtil.getSelectHtml(new DictionaryService().getDictItemsByDictName("allVillager", true), "villager_id", "姓名", StringUtil.getNotEmptyStr(domainInstance.getVillager_id()), "notEmpty")%> -->
 						&nbsp; 领取情况
 						<%=DictionaryUtil.getSelectHtml(new DictionaryService().getDictItemsByDictName("welfareDrawStatus", true), "welfare_draw_status", "领取情况", StringUtil.getNotEmptyStr(domainInstance.getWelfare_draw_status()), "notEmpty")%>&nbsp;
-						<input name="searchButton" type="button" class="blue_button" value=" 查询 " onClick="toPage(1)">
+						&nbsp;
+						<input name="searchButton" type="button" class="button button_search" value="查询" onClick="toPage(1)">
 					</td>
 				</tr>
 			</table>

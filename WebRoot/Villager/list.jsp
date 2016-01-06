@@ -44,10 +44,10 @@
 						&nbsp; <%=domainInstance.getPropertyCnName("villager_name") %>
 						<input name="villager_name" type="text" id="villager_name" value="<%=StringUtil.getNotEmptyStr(domainInstance.getVillager_name())%>" size="20">
 						&nbsp;
-						<input name="searchButton" type="button" class="blue_button" value=" 查询 " onClick="toPage(1)">
+						<input name="searchButton" type="button" class="button button_search" value="查询" onClick="toPage(1)">
 					</td>
 					<td align="right">
-						<input name="addButton" type="button" class="green_button" value=" 添加 " onClick="openBigModalDialog('<%=contextPath%>/<%=basePath%>/Servlet?method=preAddOrModifyVillager')">
+						<input name="addButton" type="button" class="button button_add" value="增加" onClick="openBigModalDialog('<%=contextPath%>/<%=basePath%>/Servlet?method=preAddOrModifyVillager')">
 					</td>
 				</tr>
 			</table>
@@ -116,15 +116,15 @@
 							}
 						%>
 					</td>
-					<td align="left" style="cursor: pointer">
+					<td align="center">
 
-						<img src="../images/list_edit.png" width="14" height="14" alt="修改" title="修改" onClick="openBigModalDialog('<%=contextPath%>/<%=basePath%>/Servlet?method=preAddOrModifyVillager&<%=o.findKeyColumnName()%>=<%=o.getKeyValue()%>')" />
+						<input type="button" class="button button_modify" title="修改" onClick="openBigModalDialog('<%=contextPath%>/<%=basePath%>/Servlet?method=preAddOrModifyVillager&<%=o.findKeyColumnName()%>=<%=o.getKeyValue()%>')" />
 						<%
 							if (o.canDelete())
 									{
 						%>
 						&nbsp;
-						<img src="../images/list_delete.png" width="14" height="14" alt="删除" title="删除"
+						<input type="button" class="button button_delete" title="删除"
 							onClick="javascript:
 								$('#pageForm').attr('action','<%=contextPath%>/<%=basePath%>/Servlet?method=<%=AbstractBaseServletTemplate.BASE_METHOD_DELETE%>&<%=o.findKeyColumnName()%>_4del=<%=o.getKeyValue()%>');
 								$('#pageForm').submit();

@@ -50,7 +50,7 @@
 						<input name="drawed_time_end" type="text" id="drawed_time_end" value="<%=StringUtil.getNotEmptyStr(domainInstance.getDrawed_time_end(), TimeUtil.date2str(TimeUtil.getToday(), "yyyy-MM-dd"))%>"
 							onFocus="WdatePicker({isShowClear:false,readOnly:false,highLineWeekDay:true,dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'drawed_time_start\',{d:1})}'})" />
 						&nbsp;
-						<input name="searchButton" type="button" class="blue_button" value=" 查询 " onClick="toPage(1)">
+						<input name="searchButton" type="button" class="button button_search" value="查询" onClick="toPage(1)">
 					</td>
 					<td align="right">
 

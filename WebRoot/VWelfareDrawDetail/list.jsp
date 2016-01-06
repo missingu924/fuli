@@ -46,7 +46,7 @@
 					</td>
 					<td><%=DictionaryUtil.getSelectHtml(new DictionaryService().getDictItemsByDictName("welfarePolicy", true), "welfare_policy_id", "福利政策", StringUtil.getNotEmptyStr(domainInstance.getWelfare_policy_id()), "notEmpty")%></td>
 					<td rowspan="3">
-						<input name="searchButton" type="button" class="blue_button" value=" 查询 " onClick="toPage(1)">
+						<input name="searchButton" type="button" class="button button_search" value="查询" onClick="toPage(1)">
 					</td>
 				</tr>
 				<tr>

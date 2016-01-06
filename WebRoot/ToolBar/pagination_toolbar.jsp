@@ -22,9 +22,9 @@
 				if (pagination.isPrevious())
 				{
 			%>
-			<img src="../images/pagination_icons_first.png" align="absmiddle" onClick="toPage(1);" class="image_button" />
+			<img src="../images/pagination_icons_first.png" title="第一页" align="absmiddle" onClick="toPage(1);" class="image_button" />
 			&nbsp;&nbsp;
-			<img src="../images/pagination_icons_pre.png" align="absmiddle" onclick="toPage(<%=pagination.getPageNo() - 1%>);" class="image_button" />
+			<img src="../images/pagination_icons_pre.png" title="上一页" align="absmiddle" onclick="toPage(<%=pagination.getPageNo() - 1%>);" class="image_button" />
 			&nbsp;&nbsp;
 			<%
 				} else
@@ -41,9 +41,9 @@
 				if (pagination.isNext())
 				{
 			%>
-			<img src="../images/pagination_icons_next.png" align="absmiddle" onclick="toPage(<%=pagination.getPageNo() + 1%>);" class="image_button" />
+			<img src="../images/pagination_icons_next.png" title="下一页" align="absmiddle" onclick="toPage(<%=pagination.getPageNo() + 1%>);" class="image_button" />
 			&nbsp;&nbsp;
-			<img src="../images/pagination_icons_last.png" align="absmiddle" onclick="toPage(<%=pagination.getTotalPage()%>);" class="image_button" />
+			<img src="../images/pagination_icons_last.png" title="最后页" align="absmiddle" onclick="toPage(<%=pagination.getTotalPage()%>);" class="image_button" />
 			&nbsp;&nbsp;
 			<%
 				} else
@@ -56,9 +56,9 @@
 			<%
 				}
 			%>
-			<img src="../images/pagination_icons_fresh.png" align="absmiddle" onClick="toPage(1);" class="image_button" />
-
-			第<%=pagination.getPageNo()%>页&nbsp;&nbsp;共<%=pagination.getTotalPage()%>页<%=pagination.getTotalCount()%>条数据&nbsp;
+			<img src="../images/pagination_icons_fresh.png"  title="刷新" align="absmiddle" onClick="toPage(1);" class="image_button" />
+<font color="#666666">
+			第<%=pagination.getPageNo()%>页&nbsp;&nbsp;共<%=pagination.getTotalPage()%>页<%=pagination.getTotalCount()%>条数据</font>
 		</td>
 	</tr>
 </table>

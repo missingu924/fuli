@@ -2,7 +2,7 @@
 <table align="center" width="100%" class="toolbar_table">
 	<tr>
 		<td>
-			<input name="closeButton" type="button" class="gray_button" value=" 关闭 " onClick="javascript:window.close();" />
+			<input name="closeButton" type="button" class="button button_close" value="关闭" title="关闭" onClick="javascript:window.close();" />
 		</td>
 	</tr>
 </table>

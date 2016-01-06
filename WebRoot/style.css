@@ -7,23 +7,6 @@ body {
 	line-height:16px;
 }
 
-/*去除超链接的下划线
-a{
- text-decoration:none;
-}
-*/
-
-/*
-a:link {color: #FF0000}     /* 未访问的链接 *
-a:visited {color: #00FF00}  /* 已访问的链接 *
-a:hover {color: #FF00FF}    /* 当有鼠标悬停在链接上 *
-a:active {color: #0000FF}   /* 被选择的链接 *
-*/
-
-table {  
-            border:0px;  
-            padding: 0px 0px 0px 0px;  
-       } 
 .red_font {
 			color:red;		
 			font-size:12px;
@@ -140,9 +123,108 @@ td.orange_bg{
 			font-size:14px;
 			font-weight:bold;
 }
+
+/*-----------------------------------*\
+  button
+\*-----------------------------------*/
+
+
+.button{
+			color: #666666;
+			background: transparent;
+			border: 0px;
+			cursor: pointer;
+			background-repeat: no-repeat;
+			background-position: left;
+			padding-left: 16px; 
+			font-size: 12px;
+			width: 60px;
+			height: 32px;
+}
+.button:hover{
+			color: #ff6600;
+}
+
+.button_add{
+			background-image: url(images/svg/light/gray/16/plus_circle.png);
+}
+.button_add:hover{
+			background-image: url(images/svg/light/orange/16/plus_circle.png);
+}
+
+.button_modify{
+			background-image: url(images/svg/light/gray/16/new.png);
+			padding: 0px;
+			width: 16px;
+			height: 16px;
+}
+.button_modify:hover{
+			background-image: url(images/svg/light/orange/16/new.png);
+}
+
+.button_delete{
+			background-image: url(images/svg/light/gray/16/minus_circle.png);
+			padding: 0px;
+			width: 16px;
+			height: 16px;
+}
+.button_delete:hover{
+			background-image: url(images/svg/light/orange/16/minus_circle.png);
+}
+
+.button_search{
+			background-image: url(images/svg/light/gray/16/search.png);
+}
+.button_search:hover{
+			background-image: url(images/svg/light/orange/16/search.png);
+}
+
+.button_cancel{
+			background-image: url(images/svg/light/gray/16/arrow_left.png);
+}
+.button_cancel:hover{
+			background-image: url(images/svg/light/orange/16/arrow_left.png);
+}
+
+.button_save{
+			background-image: url(images/svg/light/gray/16/checkmark_circle.png);
+}
+.button_save:hover{
+			background-image: url(images/svg/light/orange/16/checkmark_circle.png);
+}
+
+.button_close{
+			background-image: url(images/svg/light/gray/16/cross_circle.png);
+}
+.button_close:hover{
+			background-image: url(images/svg/light/orange/16/cross_circle.png);
+}
+
+.circle_button{
+			color: #666666;
+			background: #eeeeee;
+			border: 1px solid #aaaaaa;
+			cursor: pointer;
+			-webkit-border-radius: 12px;
+			-moz-border-radius: 12px;
+			border-radius: 12px;
+			height: 24px;
+			width: 24px;
+}
+.circle_button_add{
+			background-image: url(../images/svg/heavy/shop.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 12px 12px;
+}
+.circle_button_add:hover{
+			background-image: url(../images/svg/heavy/green/shop.png);
+			border: 1px solid #009966;
+}
+
 .green_button{
 			background:#38B162; 
-			height:25px; 
+			padding: 6px;
 			color:#FFFFFF;
 			border:1px solid #FFFFFF;
 			cursor: pointer;
@@ -152,7 +234,7 @@ td.orange_bg{
 }
 .blue_button{
 			background:#3399FF;
-			height:25px; 
+			padding: 6px;
 			color:#FFFFFF;
 			border:1px solid #FFFFFF;
 			cursor: pointer;
@@ -192,56 +274,23 @@ td.orange_bg{
 }
 .gray_button{
 			background:#f9f9f9;
-			height:25px; 
+			padding: 6px;
 			border:1px solid #dddddd;
 			cursor: pointer;
 			-webkit-border-radius: 3px;
 			-moz-border-radius: 3px;
 			border-radius: 3px;
 }
-.report_button
-{			background-image:url(images/0813/write.png);
-			border: 0; 
-			font-size: 12px; 
-			height: 24px; 
-			width: 86px;
-			-webkit-border-radius: 3px;
-			-moz-border-radius: 3px;
-			border-radius: 3px;
-}
-.logout_button{
-			background:#CCCCCC; 
-			height:25px; 
-			border:0;
-			cursor: pointer;
-			-webkit-border-radius: 3px;
-			-moz-border-radius: 3px;
-			border-radius: 3px;
-}
 
-.image_button{cursor: pointer;}
-
-.input_box{height:22px; }
-
-.input_box_forsearch{
-			height:30px;
-			color:#FF9900;
-			font-size:18px;
-			font-weight:bold;
-			border:1px solid #FF9900;
-			}
+.image_button{cursor: pointer;}	
 			
 .input_box_id_card{
-			height:30px;
-			color:#000000;
-			font-size:18px;
-			
-			font-family:Arial, Helvetica, sans-serif;
-			border:1px solid #CCCCCC;
+			font-size: 20px;
+			font-family: Arial, Helvetica, sans-serif;
+			border: 1px solid #CCCCCC;
 			}
 .id_card_button{
 			background:#3399FF; 
-			height:34px; 
 			color:#FFFFFF;
 			font-size:16px;
 			cursor: pointer;
@@ -476,54 +525,28 @@ cursor:pointer;
 
 
 /*输入框聚焦高亮*/
-input, textarea {
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    transition: border linear 0.2s, box-shadow linear 0.2s;
-}
 
-input, textarea, select {
-    font-size: 1em;
+input[type="text"], 
+input[type="password"],
+textarea, 
+select {
     display: inline-block;
-    padding: 3px;
+    padding: 6px;
     color: #555555;
     vertical-align: middle;
     background-color: #ffffff;
     border: 1px solid #cccccc;
-    border-radius: 3px;
+    border-radius: 4px;
     margin: 0px 0;
 }
 
 /* 获得焦点时的输入框高光效果 */
-input:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
 textarea:focus {
     border-color: rgba(82, 168, 236, 0.8);
     outline: 0;
     inline: thin solid \9;    /* IE6-9 */  
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-}
-
-/* 避免对其他元素的不良影响(主要表现在IE浏览器中) */
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus,
-input[type="button"]:focus,
-select:focus {
-    outline: 0px auto -webkit-focus-ring-color;
-    outline-offset: 0px;
-    box-shadow: none;
-}
-
-input[type="image"],
-input[type="checkbox"],
-input[type="radio"],
-{
-  padding: 0;
-  margin: 3px 0;
-  margin-top: 0;   /* IE7 */
-  line-height: normal;
-  cursor: pointer;
-  background-color: transparent;
-  border: 0 \9;     /* IE9- */
-  border-radius: 0;
 }
 
