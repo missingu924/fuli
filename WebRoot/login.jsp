@@ -61,12 +61,10 @@ body {
 		<style type="text/css">
 .STYLE3 {font-size: 16px}
 .infoStyle {
-	font-family: "黑体";
 	font-size: 20px;
 	color:#FF0000 ;
 }
 .infoLittleStyle {
-	font-family: "宋体";
 	font-size: 12px;
 	color:#FF0000 ;
 }
@@ -75,7 +73,6 @@ body {
 	font-weight: bold;
 }
 .STYLE5 {
-	font-family: "黑体";
 	font-size: 36px;
 	color: #FF0000;
 	font-weight: bold;
@@ -100,7 +97,7 @@ body {
 					<td></td>
 					<td width="15%" height="60" align="left">&nbsp;</td>
 					<td align="left"><img src="images/SystemName.png" width="296" height="56"></td>
-					<td align="right" class="little_gray_font">发放福利 造福村民</td>
+					<td align="right" class="little_gray_font"><%=licensedMachine.getSlogan() %></td>
 					<td width="15%" align="left" class="little_gray_font">&nbsp;</td>
 					<td></td>
 				</tr>
@@ -166,7 +163,7 @@ body {
 				  <td height="50" align="center" class="little_gray_font">&nbsp;</td>
 				  <td width="15%" height="60" align="center" class="little_gray_font">&nbsp;</td>
 				  <td height="50" align="left" class="little_gray_font">请使用1024*768以上分辨率</td>
-				  <td height="50" align="right" class="little_gray_font">授权给<%=licensedMachine.getCustomerName()%>使用&nbsp;&nbsp;|&nbsp;&nbsp;威海泰和软件有限公司技术支持</td>
+				  <td height="50" align="right" class="little_gray_font">授权给<%=licensedMachine.getCustomerName()%>使用&nbsp;&nbsp;|&nbsp;&nbsp;<%=licensedMachine.getSupplier() %>技术支持</td>
 				  <td width="15%" align="center" class="little_gray_font">&nbsp;</td>
 				  <td height="50" align="center" class="little_gray_font">&nbsp;</td>
 				</tr>

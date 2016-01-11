@@ -3,6 +3,7 @@ body {
 	margin-top: 2px;
 	margin-right: 0px;
 	margin-bottom: 0px;
+	font-family: "Microsoft YaHei",Î¢ÈíÑÅºÚ,"Microsoft JhengHei",»ªÎÄÏ¸ºÚ,STHeiti,MingLiu;
 	font-size:12px;
 	line-height:16px;
 }
@@ -153,23 +154,23 @@ td.orange_bg{
 }
 
 .button_modify{
-			background-image: url(images/svg/light/gray/16/new.png);
+			background-image: url(images/svg/light/gray/12/new.png);
 			padding: 0px;
 			width: 16px;
 			height: 16px;
 }
 .button_modify:hover{
-			background-image: url(images/svg/light/orange/16/new.png);
+			background-image: url(images/svg/light/orange/12/new.png);
 }
 
 .button_delete{
-			background-image: url(images/svg/light/gray/16/minus_circle.png);
+			background-image: url(images/svg/light/gray/12/minus_circle.png);
 			padding: 0px;
 			width: 16px;
 			height: 16px;
 }
 .button_delete:hover{
-			background-image: url(images/svg/light/orange/16/minus_circle.png);
+			background-image: url(images/svg/light/orange/12/minus_circle.png);
 }
 
 .button_search{

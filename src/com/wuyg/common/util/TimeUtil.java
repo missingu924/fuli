@@ -488,6 +488,18 @@ public class TimeUtil
 		int lunars[] = LunarCalendar.solarToLunar(c.get(c.YEAR), c.get(c.MONTH)+1, c.get(c.DAY_OF_MONTH));
 		return LunarCalendar.lunarToSolar(lunars[0] + "-01-01");
 	}
+	
+	public static String getThisYearFirstDay()
+	{
+		Calendar c = Calendar.getInstance();
+		return c.get(c.YEAR) + "-01-01";
+	}
+	
+	public static String getThisYearLastDay()
+	{
+		Calendar c = Calendar.getInstance();
+		return c.get(c.YEAR) + "-12-31";
+	}
 
 	/**
 	 * 农历某年最后一天转换为阳历

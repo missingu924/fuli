@@ -51,16 +51,22 @@
 				<td>
 					<%=domainInstance.getPropertyCnName("welfare_policy_start_time") %>:
 				</td>
-				<td><%=StringUtil.getNotEmptyStr(domainInstance.getWelfare_policy_start_time_show())%>&nbsp;&nbsp;&nbsp;&nbsp;
+				<td><%=StringUtil.getNotEmptyStr(domainInstance.getWelfare_policy_start_time_show())%>
+				<!-- 
+				&nbsp;&nbsp;&nbsp;&nbsp;
 					<span class="little_gray_font">农历<%=StringUtil.getNotEmptyStr(domainInstance.getWelfare_policy_start_time_lunar())%></span>
+				 -->
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<%=domainInstance.getPropertyCnName("welfare_policy_end_time") %>:
 				</td>
-				<td><%=StringUtil.getNotEmptyStr(domainInstance.getWelfare_policy_end_time_show())%>&nbsp;&nbsp;&nbsp;&nbsp;
+				<td><%=StringUtil.getNotEmptyStr(domainInstance.getWelfare_policy_end_time_show())%>
+				<!--
+				&nbsp;&nbsp;&nbsp;&nbsp;
 					<span class="little_gray_font">农历<%=StringUtil.getNotEmptyStr(domainInstance.getWelfare_policy_end_time_lunar())%></span>
+				 -->
 				</td>
 			</tr>
 			<tr>

@@ -125,7 +125,7 @@
 						<%=domainInstance.getPropertyCnName("welfare_policy_start_time")%>:
 					</td>
 					<td>
-						<input name="welfare_policy_start_time" type="text" id="welfare_policy_start_time" value="<%=StringUtil.getNotEmptyStr(domainInstance.getWelfare_policy_start_time_show(), TimeUtil.getThisLunarYearFirstDay2solar())%>" class="notEmpty"
+						<input name="welfare_policy_start_time" type="text" id="welfare_policy_start_time" value="<%=StringUtil.getNotEmptyStr(domainInstance.getWelfare_policy_start_time_show(), TimeUtil.getThisYearFirstDay())%>" class="notEmpty"
 							onFocus="WdatePicker({isShowClear:false,readOnly:false,highLineWeekDay:true,dateFmt:'yyyy-MM-dd'})">
 					</td>
 				</tr>
@@ -134,7 +134,7 @@
 						<%=domainInstance.getPropertyCnName("welfare_policy_end_time")%>:
 					</td>
 					<td>
-						<input name="welfare_policy_end_time" type="text" id="welfare_policy_end_time" value="<%=StringUtil.getNotEmptyStr(domainInstance.getWelfare_policy_end_time_show(), TimeUtil.getThisLunarYearLastDay2solar())%>" class="notEmpty"
+						<input name="welfare_policy_end_time" type="text" id="welfare_policy_end_time" value="<%=StringUtil.getNotEmptyStr(domainInstance.getWelfare_policy_end_time_show(), TimeUtil.getThisYearLastDay())%>" class="notEmpty"
 							onFocus="WdatePicker({isShowClear:false,readOnly:false,highLineWeekDay:true,dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'welfare_policy_start_time\',{d:1})}'})">
 					</td>
 				</tr>

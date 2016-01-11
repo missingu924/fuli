@@ -18,7 +18,6 @@ a
 .STYLE2 {color: #000000; line-height:20px;}
 .STYLE3 {
 	font-size: 24px;
-	font-family: Aldhabi, "ºÚÌå";
 	font-weight: bold;
 	color: #FF0000;
 }

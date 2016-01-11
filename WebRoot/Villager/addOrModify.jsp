@@ -354,11 +354,15 @@
 						<a href="#" onClick="openBigModalDialog('<%=contextPath%>/WelfarePolicy/Servlet?method=detailWelfarePolicy&<%=o.findKeyColumnName()%>=<%=o.getKeyValue()%>')"><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_name())%></a>
 					</td>
 					<td><%=StringUtil.getNotEmptyStr(o.getYear_lunar())%></td>
-					<td><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_start_time_show())%><br />
+					<td><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_start_time_show())%> 
+					<!-- <br />
 						<span class="little_gray_font">农历<%=StringUtil.getNotEmptyStr(o.getWelfare_policy_start_time_lunar())%></span>
+					 -->
 					</td>
-					<td><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_end_time_show())%><br />
+					<td><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_end_time_show())%>
+					<!-- <br />
 						<span class="little_gray_font">农历<%=StringUtil.getNotEmptyStr(o.getWelfare_policy_end_time_lunar())%></span>
+					 -->
 					</td>
 					<td>
 						<font color="<%=o.getWelfare_status_color()%>"><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_status())%></font>
@@ -384,11 +388,15 @@
 						<a href="#" onClick="openBigModalDialog('<%=contextPath%>/WelfarePolicy/Servlet?method=detailWelfarePolicy&<%=o.findKeyColumnName()%>=<%=o.getKeyValue()%>')"><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_name())%></a>
 					</td>
 					<td><%=StringUtil.getNotEmptyStr(o.getYear_lunar())%></td>
-					<td><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_start_time_show())%><br />
+					<td><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_start_time_show())%>
+					<!--<br />
 						<span class="little_gray_font">农历<%=StringUtil.getNotEmptyStr(o.getWelfare_policy_start_time_lunar())%></span>
+					-->
 					</td>
-					<td><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_end_time_show())%><br />
+					<td><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_end_time_show())%>
+					<!--<br />
 						<span class="little_gray_font">农历<%=StringUtil.getNotEmptyStr(o.getWelfare_policy_end_time_lunar())%></span>
+					-->
 					</td>
 					<td>
 						<font color="<%=o.getWelfare_status_color()%>"><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_status())%></font>

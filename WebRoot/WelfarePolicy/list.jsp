@@ -7,7 +7,8 @@
 <%@page import="com.wuyg.common.obj.PaginationObj"%> 
 <%@page import="com.inspur.common.dictionary.util.DictionaryUtil"%> 
 <%@page import="com.hz.dict.service.DictionaryService"%>
-<%@page import="com.fuli.obj.WelfarePolicyObj"%> 
+<%@page import="com.fuli.obj.WelfarePolicyObj"%>
+<%@page import="com.wuyg.common.util.TimeUtil"%> 
 <!-- 基本信息 --> 
 <% 
 	// 当前上下文路径 
@@ -103,13 +104,21 @@
 						<a href="#"
 							onClick="openBigModalDialog('<%=contextPath%>/<%=basePath%>/Servlet?method=detailWelfarePolicy&<%=o.findKeyColumnName()%>=<%=o.getKeyValue()%>')"><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_name())%></a>
 					</td>
-					<td><%=StringUtil.getNotEmptyStr(o.getYear_lunar())%></td>
-					<td><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_start_time_show())%>&nbsp;&nbsp;&nbsp;&nbsp;
+					<td>
+					<!-- <%=StringUtil.getNotEmptyStr(o.getYear_lunar())%> -->
+					<%=StringUtil.getNotEmptyStr(TimeUtil.date2str(o.getWelfare_policy_start_time(),"yyyy"))%>
+					</td>
+					<td><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_start_time_show())%>
+						<!--
+						&nbsp;&nbsp;&nbsp;&nbsp;
 						<span class="little_gray_font">农历<%=StringUtil.getNotEmptyStr(o.getWelfare_policy_start_time_lunar())%></span>
+						-->
 					</td>
 					<td><%=StringUtil.getNotEmptyStr(o.getWelfare_policy_end_time_show())%>
+						<!-- 
 						&nbsp;&nbsp;&nbsp;&nbsp;
 						<span class="little_gray_font">农历<%=StringUtil.getNotEmptyStr(o.getWelfare_policy_end_time_lunar())%></span>
+					 	-->
 					</td>
 					<td>
 						<%
