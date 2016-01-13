@@ -25,6 +25,7 @@
 %>
 <html>
 	<head>
+		<base target="_self" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title><%=domainInstance.getCnName() %>列表</title>
 		<link href="../style.css" rel="stylesheet" type="text/css">
@@ -33,7 +34,7 @@
 		<script type="text/javascript" src="../js/utils.js"></script>
 	</head>
 	<body>
-		<form name="pageForm" id="pageForm" method="post" action="<%=request.getContextPath()%>/<%=basePath%>/Servlet?method=list4this">
+		<form name="pageForm" id="pageForm" method="post" action="<%=request.getContextPath()%>/<%=basePath%>/Servlet?method=list4select">
 			
 			<!-- 查询条件 -->
 			<table class="search_table" align="center" width="98%">
@@ -48,8 +49,8 @@
 						&nbsp;
 						<input name="searchButton" type="button" class="button button_search" value="查询" onClick="toPage(1)">
 					</td>
-					<td align="right">
-						<input name="addButton" type="button" class="button button_add" value="增加" onClick="openBigModalDialog('<%=contextPath%>/<%=basePath%>/Servlet?method=preAddOrModifyVillager')">
+					<td  align="left">
+						<input name="confirmButton" type="button" class="button button_save" value="确认" title="确认" onClick="confirmSelect()">
 					</td>
 				</tr>
 			</table>
@@ -74,16 +75,14 @@
 			<table class="table table-bordered table-striped" align="center" width="98%">
 				<thead>
 					<tr>
+						<th>选择</th>
 						<th><%=domainInstance.getPropertyCnName("id") %></th>
 						<th><%=domainInstance.getPropertyCnName("villager_name") %></th>
 						<th><%=domainInstance.getPropertyCnName("id_card") %></th>
 						<th><%=domainInstance.getPropertyCnName("villager_sex") %></th>
 						<th><%=domainInstance.getPropertyCnName("villager_telephone") %></th>
 						<th><%=domainInstance.getPropertyCnName("villager_group") %></th>
-						<th><%=domainInstance.getPropertyCnName("villager_omment") %></th>
 						<th><%=domainInstance.getPropertyCnName("enable") %></th>
-						<th><%=domainInstance.getPropertyCnName("binding_to_villager_name") %></th>
-						<th>操作</th>
 					</tr>
 				</thead>
 				<%
@@ -92,50 +91,17 @@
 							VillagerObj o = (VillagerObj) list.get(i);
 				%>
 				<tr>
+					<td><input type="radio" name="villager_info" id="villager_info" value="<%=StringUtil.getNotEmptyStr(o.getId())%>,<%=StringUtil.getNotEmptyStr(o.getVillager_name())%>"></td>
 					<td><%=StringUtil.getNotEmptyStr(o.getId())%></td>
-					<td>
-						<a href="#" onClick="openBigModalDialog('<%=contextPath%>/<%=basePath%>/Servlet?method=detailVillager&<%=o.findKeyColumnName()%>=<%=o.getKeyValue()%>')"> <%=StringUtil.getNotEmptyStr(o.getVillager_name())%> </a>
-					</td>
+					<td><%=StringUtil.getNotEmptyStr(o.getVillager_name())%></td>
 					<td><%=StringUtil.getNotEmptyStr(o.getId_card())%></td>
 					<td><%=StringUtil.getNotEmptyStr(o.getVillager_sex())%></td>
 					<td><%=StringUtil.getNotEmptyStr(o.getVillager_telephone())%></td>
 					<td><%=StringUtil.getNotEmptyStr(o.getVillager_group())%></td>
-					<td><%=StringUtil.getNotEmptyStr(o.getVillager_omment())%></td>
 					<td>
 						<%
 							String fontColor = "停用".equals(o.getEnable()) ? "red" : "black";
 						%><font color="<%=fontColor%>">已<%=StringUtil.getNotEmptyStr(o.getEnable())%></font>
-					</td>
-					<td>
-						<%
-							if (!StringUtil.isEmpty(o.getBinding_to_villager_name()))
-									{
-						%>
-						<a href="#" onClick="openBigModalDialog('<%=contextPath%>/<%=basePath%>/Servlet?method=detailVillager&<%=o.findKeyColumnName()%>=<%=o.getBinding_to_id()%>')"> <%=StringUtil.getNotEmptyStr(o.getBinding_to_villager_name())%> </a> &nbsp;&nbsp;
-						<img src="../images/broken_link.png" width="14" height="14" alt="解绑" style="padding: 0; cursor: pointer" title="解绑"
-							onClick="javascript:
-								$('#pageForm').attr('action','<%=contextPath%>/<%=basePath%>/Servlet?method=unbind&<%=o.findKeyColumnName()%>=<%=o.getKeyValue()%>');
-								$('#pageForm').submit();" />
-						<%
-							}
-						%>
-					</td>
-					<td align="center">
-
-						<input type="button" class="button button_modify" title="修改" onClick="openBigModalDialog('<%=contextPath%>/<%=basePath%>/Servlet?method=preAddOrModifyVillager&<%=o.findKeyColumnName()%>=<%=o.getKeyValue()%>')" />
-						<%
-							if (o.canDelete())
-									{
-						%>
-						&nbsp;
-						<input type="button" class="button button_delete" title="删除"
-							onClick="javascript:
-								$('#pageForm').attr('action','<%=contextPath%>/<%=basePath%>/Servlet?method=<%=AbstractBaseServletTemplate.BASE_METHOD_DELETE%>&<%=o.findKeyColumnName()%>_4del=<%=o.getKeyValue()%>');
-								$('#pageForm').submit();
-								" />
-						<%
-							}
-						%>
 					</td>
 				</tr>
 				<%
@@ -152,7 +118,23 @@
 				}
 			%>
 		</form> 
-
+	<script>
+	function confirmSelect()
+	{		
+		var villagerInfo = $("#villager_info:checked").val();
+		
+		if(villagerInfo)
+		{
+			window.returnValue = villagerInfo;
+			window.close();
+		}
+		else
+		{
+			if(confirm("您没有选择任何村民信息，确认关闭吗?"))
+			window.close();
+		}
+	}
+	</script>
 	</body>
 </html>
 

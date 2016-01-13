@@ -17,6 +17,7 @@ public class VillagerObj extends BaseDbObj
 	private String villager_name;
 	private String villager_sex;
 	private String villager_telephone;
+	private String villager_group;
 	private String villager_omment;
 	private String last_modify_account;
 	private Timestamp last_modify_time;
@@ -62,6 +63,13 @@ public class VillagerObj extends BaseDbObj
 	{
 		return "村民";
 	}
+	
+	@Override
+	public String findDefaultOrderBy()
+	{
+		// 绑定人和被绑定人排在一起展现
+		return "case when ISNUMERIC(BINDING_TO_ID)=1 then convert(numeric(18,2),BINDING_TO_ID)+0.1 else ID end,villager_name"; 
+	}
 
 	public LinkedHashMap<String, String> getProperties()
 	{
@@ -72,6 +80,7 @@ public class VillagerObj extends BaseDbObj
 		pros.put("id_card", "身份证号");
 		pros.put("villager_sex", "性别");
 		pros.put("villager_telephone", "电话");
+		pros.put("villager_group", "所属组");
 		pros.put("villager_omment", "备注");
 		pros.put("enable", "是否启用");
 		pros.put("binding_to_villager_name", "绑定到");
@@ -243,5 +252,15 @@ public class VillagerObj extends BaseDbObj
 	public void setEnable(String enable)
 	{
 		this.enable = enable;
+	}
+
+	public String getVillager_group()
+	{
+		return villager_group;
+	}
+
+	public void setVillager_group(String villager_group)
+	{
+		this.villager_group = villager_group;
 	}
 }

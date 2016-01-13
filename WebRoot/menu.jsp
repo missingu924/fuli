@@ -109,7 +109,7 @@ function toggleMenuGroup(td,menuGroupId)
 						</tr>
 						<tr>
 							<td class="menu_not_selected"
-								onclick="openInMainFrame(this,'<%=request.getContextPath()%>/Villager/Servlet?method=list')">
+								onclick="openInMainFrame(this,'<%=request.getContextPath()%>/Villager/Servlet?method=list4this')">
 								<img src="images/svg/heavy/green/user_list.png" width="18"
 									height="18" align="middle" />
 								&nbsp;&nbsp;管理村民信息

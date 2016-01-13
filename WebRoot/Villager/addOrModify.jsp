@@ -72,6 +72,7 @@
 					if(!checkNull("villager_id","身份证号")) return false;
 					if(!checkNull("villager_name","姓名")) return false;
 					if(!checkNull("villager_sex","性别")) return false;
+					if(!checkNull("villager_group","所属组")) return false;
 					if(!checkNull("enable","是否启用")) return false;
 					$("#addOrModifyForm").submit();
 		}
@@ -108,6 +109,20 @@
 						}
 					});
 				};
+		}
+		
+		// 选择绑定到的村民
+		function selectVillager() {
+		var returnValue = window.showModalDialog(
+			'/fuli/Villager/Servlet?method=list4select',this,
+			'dialogHeight:700px;dialogWidth:820px;resizable:yes;maximize:yes');
+
+			// 返回的格式为 villager_id,villager_name
+			if (returnValue != null) {
+				var villagerArray = returnValue.split(',');
+				$("#binding_to_id").val(villagerArray[0]);
+				$("#binding_to_villager_name").val(villagerArray[1]);
+			}
 		}
 	</script>
 
@@ -247,6 +262,14 @@
 				</tr>
 				<tr>
 					<td>
+						<%=domainInstance.getPropertyCnName("villager_group") %>:
+					</td>
+					<td>
+						<%=DictionaryUtil.getSelectHtml(new DictionaryService().getDictItemsByDictName("villagerGroup", false), "villager_group", "所属组", StringUtil.getNotEmptyStr(domainInstance.getVillager_group()), "notEmpty")%>
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<%=domainInstance.getPropertyCnName("villager_omment") %>:
 					</td>
 					<td>
@@ -275,7 +298,12 @@
 							} else
 							{
 						%>
+						<!-- 
 						<%=DictionaryUtil.getSelectHtml(new DictionaryService().getDictItemsByDictNameExcludeKey("villager", false, domainInstance.getId() + ""), "binding_to_id", "绑定到", StringUtil.getNotEmptyStr(domainInstance.getBinding_to_id()), "notEmpty")%>
+						 -->
+						<input type="text" id="binding_to_villager_name" name="binding_to_villager_name" value="<%=StringUtil.getNotEmptyStr(domainInstance.getBinding_to_villager_name()) %>" onClick="selectVillager()">
+						<input type="hidden" id="binding_to_id" name="binding_to_id" value="<%=StringUtil.getNotEmptyStr(domainInstance.getBinding_to_id()) %>">
+					
 						<%
 							}
 						%>

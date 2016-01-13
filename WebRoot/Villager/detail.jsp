@@ -62,6 +62,12 @@
 			</tr>
 			<tr>
 				<td>
+					<%=domainInstance.getPropertyCnName("villager_group") %>:
+				</td>
+				<td><%=StringUtil.getNotEmptyStr(domainInstance.getVillager_group())%></td>
+			</tr>
+			<tr>
+				<td>
 					<%=domainInstance.getPropertyCnName("villager_omment") %>:
 				</td>
 				<td><%=StringUtil.getNotEmptyStr(domainInstance.getVillager_omment())%></td>

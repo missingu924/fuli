@@ -10,6 +10,7 @@
 		<DictConfig dictShowName="可绑定村民" dictName="villager" dictTable="villager" dictKeyCol="id" dictValueCol="villager_name+'/'+id_card+'/'+villager_sex as villager_name" dictOrderByCol="villager_name" filter="enable='启用' and binding_to_id is null"/>
 		<DictConfig dictShowName="所有村民" dictName="allVillager" dictTable="villager" dictKeyCol="id" dictValueCol="villager_name" dictOrderByCol="villager_name" filter=""/>
 		<DictConfig dictShowName="领取情况" dictName="welfareDrawStatus" values="已领完,部分领取,未领取"/>
+		<DictConfig dictShowName="所属组" dictName="villagerGroup" values="一组,二组,三组,四组,五组,六组,七组,八组,十组,十一组,十二组,十三组,十四组,十五组"/>
 		
 	</DictConfigList>
 	<DictRelationList>

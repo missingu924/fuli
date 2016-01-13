@@ -22,7 +22,7 @@
 <html> 
 	<head> 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-		<title><%=domainInstance.getCnName() %>列表</title> 
+		<title><%=domainInstance.getCnName() %>列表</title>
 		<link href="../style.css" rel="stylesheet" type="text/css"> 
 		<link href="../table.css" rel="stylesheet" type="text/css"> 
 		<script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script> 

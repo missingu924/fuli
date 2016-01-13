@@ -18,6 +18,7 @@ import com.wuyg.common.dao.DefaultBaseDAO;
 import com.wuyg.common.dao.IBaseDAO;
 import com.wuyg.common.obj.PaginationObj;
 import com.wuyg.common.servlet.AbstractBaseServletTemplate;
+import com.wuyg.common.util.MyBeanUtils;
 import com.wuyg.common.util.StringUtil;
 
 public class VillagerServlet extends AbstractBaseServletTemplate
@@ -154,6 +155,30 @@ public class VillagerServlet extends AbstractBaseServletTemplate
 		service.unbind(domainInstance.getKeyValue());
 		
 		list(request, response);
+	}
+	
+	public void list4select(HttpServletRequest request, HttpServletResponse response) throws Exception
+	{
+		// 条件
+		String where=" 1=1 ";
+		where += MyBeanUtils.getWhereSqlFromBean(domainInstance, getDomainDao().getTableMetaData());
+		where +="and enable='启用' and binding_to_id is null ";// 启用的且未绑定到别人的
+		
+		// 查询
+		PaginationObj domainPagination = getDomainDao().searchPaginationByClause(domainInstance.getClass(), where, domainInstance.findDefaultOrderBy(), domainSearchCondition.getPageNo(), domainSearchCondition.getPageCount());
+		
+		
+		request.setAttribute(DOMAIN_INSTANCE, domainInstance);
+		request.setAttribute(DOMAIN_PAGINATION, domainPagination);
+
+		
+		request.getRequestDispatcher("/" + getBasePath() + "/" + BASE_METHOD_LIST + "4select.jsp").forward(request, response);
+
+	}
+	
+	public void list4this(HttpServletRequest request, HttpServletResponse response) throws Exception
+	{
+		super.list(request, response);
 	}
 	
 	public void export4this(HttpServletRequest request, HttpServletResponse response) throws Exception
